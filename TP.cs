@@ -11,7 +11,7 @@ for (int i = 3; i <= 100; i = i + 3)
 }
 
 // Ejercicio B
-Console.WriteLine();
+Console.WriteLine("");
 Console.WriteLine("Ej: B");
 Console.WriteLine("");
 Console.WriteLine("Ingrese su edad:");
