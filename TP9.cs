@@ -2,7 +2,6 @@
     string Ejercicio1(int N)
     {
         string resultado;
-        N = int.Parse(Console.ReadLine());
         if (N > 0)
         {
             resultado = "El número es positivo.";
@@ -43,7 +42,6 @@ try
     string Ejercicio2(int Q)
     {
         string resultado;
-        Q = int.Parse(Console.ReadLine());
         if (Q >= 18)
         {
             resultado = "¡Bienvenido a la fiesta!.";
@@ -81,7 +79,6 @@ try
     string Ejercicio3(string contraseña)
     {
         string resultado;
-        contraseña = Console.ReadLine();
         if (contraseña == "python123")
         {
             resultado = "¡Contraseña correcta! Acceso concedido.";
@@ -109,7 +106,6 @@ try
     string Ejercicio4(int numero)
     {
         string resultado;
-        numero = int.Parse(Console.ReadLine());
         if (numero % 2 == 0)
         {
             resultado = "El número es par.";
@@ -145,7 +141,6 @@ try
     string Ejercicio5(int edad, string compro)
     {
         string resultado;
-        edad = int.Parse(Console.ReadLine());
         if (edad >= 65 && compro == "si")
         {
             resultado = "¡Felicidades! Tienes entrada gratuita al cine.";
