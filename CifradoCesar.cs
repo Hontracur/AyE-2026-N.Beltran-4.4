@@ -1,54 +1,88 @@
-﻿// Cifrado Cesar
-string abc = "abcdefghijklmnopqrstuvwxyz";
-
-string funcion()
+// Cifrado Cesar
+Console.WriteLine("");
+Console.WriteLine("Cifrado Cesar");
+Console.WriteLine("");
+﻿Console.WriteLine("ingrese una frase para cifrarla o descifrarla y que no tengan caracteres especiales");
+string frase;
+while (true)
 {
-    string mensaje = "";
-    bool esValido = false;
+    frase = Console.ReadLine().ToLower();
 
-    while (!esValido)
+    bool tieneEspecial = false;
+    for (int i = 0; i < frase.Length; i++)
     {
-        Console.WriteLine("Pon un mensaje");
-        mensaje = Console.ReadLine();
-        mensaje = mensaje.ToLower();
-
-        bool contieneError = false;
-
-        for(int i = 0; i < mensaje.Length; i++)
+        char letra = frase[i];
+        if ((letra < 'a' || letra > 'z') && letra != ' ')
         {
-            char caracter = mensaje[i];
-            bool encontrado = false;
-        
-
-        for(int j = 0; j < abc.Length; j++)
-        {
-                if (caracter == abc[j])
-                {
-                    encontrado = true;
-                    break;
-                }
+            tieneEspecial = true;
+            break;
         }
-        if (!encontrado)
-            {
-                contieneError = true;
-                break;
-            }
-        if (contieneError)
-            {
-                Console.WriteLine("El mensaje contiene caracteres no usados para el Cifrado Cesar");
-            }
-            else
-            {
-                esValido = true;
-            }
+    }
+
+    if (tieneEspecial)
+    {
+        Console.WriteLine("La frase contiene caracteres especiales. Por favor, ingrese una frase sin caracteres especiales.");
+        continue;
+    }
+
+    break;
+}
+
+Console.WriteLine("ingrese el numero de desplazamiento: ");
+int desplazamiento = Convert.ToInt32(Console.ReadLine());
+
+static string Cifrar(string texto, int desplazamiento)
+{
+    desplazamiento = desplazamiento % 26;
+    string resultado = "";
+    for (int i = 0; i < texto.Length; i++)
+    {
+        char letra = texto[i];
+        if (letra >= 'a' && letra <= 'z')
+        {
+            char baseLetra = 'a';
+            char nueva = (char)(((letra - baseLetra + desplazamiento + 26) % 26) + baseLetra);
+            resultado += nueva;
+        }
+    }
+    return resultado;
+
+}
+
+static string Descifrar(string texto, int desplazamiento)
+{
+    desplazamiento = desplazamiento % 26;
+    string resultado = "";
+    for (int i = 0; i < texto.Length; i++)
+    {
+        char letra = texto[i];
+        if (letra >= 'a' && letra <= 'z')
+        {
+            char baseLetra = 'a';
+            char nueva = (char)(((letra - baseLetra - desplazamiento + 26) % 26) + baseLetra);
+            resultado += nueva;
+        }
+    }
+    return resultado;
+}
+for (int i = 0; i < frase.Length; i++)
+{
+    char letra = frase[i];
+    if ((letra < 'a' || letra > 'z') && letra != ' ')
+    {
+        Console.WriteLine("La frase contiene caracteres especiales. Por favor, ingrese una frase sin caracteres especiales.");
+        return;
     }
 }
-
-string cifrado(string texto, int clave)
+Console.WriteLine("ingrese una frase para cifrarla o descifrarla: (c/d)");
+string opcion = Console.ReadLine().ToLower();
+if (opcion == "c")
 {
-    return texto;
+    string cifrado = Cifrar(frase, desplazamiento);
+    Console.WriteLine("Frase cifrada: " + cifrado);
 }
-string descifrado(string texto, int clave)
+else if (opcion == "d")
 {
-    
+    string descifrado = Descifrar(frase, desplazamiento);
+    Console.WriteLine("Frase descifrada: " + descifrado);
 }
