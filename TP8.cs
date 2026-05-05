@@ -1,45 +1,94 @@
-﻿// Ejercicio 1: Vocales
-
-string vocales = ("aeiouAEIOU");
-string texto = ("Hola que tal");
-int contador = 0;
-foreach (char T in texto)
+//Ejercicio 1
+Console.WriteLine("Ejercicio 1:");
+Console.WriteLine("");
+Console.WriteLine("ingrese una frase para contar las vocales");
+string frase = Console.ReadLine();
+int contadorVocales = 0;
+string vocales = "aeiouAEIOU";
+foreach (char T in frase)
 {
     foreach (char V in vocales)
     {
         if (T == V)
         {
-            contador++;
-            Console.WriteLine("La cantidad de vocales son " + contador);
+            contadorVocales++;
             break;
         }
     }
-    
 }
+Console.WriteLine("La cantidad de vocales en la frase es: " + contadorVocales);
 
-// Ejercicio 2: Invertir
-
-string texto1 = ("cantidad");
-string fraseinvertida = "";
-for (int i = 0; i < texto1.Length; i++)
+//Ejercicio 2
+Console.WriteLine("");
+Console.WriteLine("Ejercicio 2");
+Console.WriteLine("");
+Console.WriteLine("ingrese una frase para invertirla");
+string frase2 = Console.ReadLine();
+string fraseInvertida = "";
+for (int i = 0; i < frase2.Length; i++)
 {
-    fraseinvertida = texto1[i] + fraseinvertida;
+    fraseInvertida = frase2[i] + fraseInvertida;
 }
-Console.WriteLine("La palabra invertida es" + fraseinvertida);
+Console.WriteLine("La frase invertida es: " + fraseInvertida);
 
-// Ejercicio 3: Suma de digitos
-
-string texto2 = ("123");
+//Ejercicio 3
+Console.WriteLine("");
+Console.WriteLine("Ejercicio 3");
+Console.WriteLine("");
+Console.WriteLine("ingrese un numero entero y calcula la suma de los digitos");
+string numero = Console.ReadLine();
 int suma = 0;
-foreach (char N in texto2)
+int sumarespaldo = 0;
+foreach (char digito in numero)
 {
-    if (char.IsDigit(N))
-    {
-        suma += Convert.ToInt32(N.ToString());
-    }
- 
+    suma = Convert.ToInt32("" + digito);
+    sumarespaldo = suma + sumarespaldo;
 }
-Console.WriteLine("El numero total es " + suma);
+Console.WriteLine("La suma de los digitos es:" + sumarespaldo);
 
-// Ejercicio 4: 
+//Ejercicio 4
+Console.WriteLine("");
+Console.WriteLine("Ejercicio 4");
+Console.WriteLine("");
+Console.WriteLine("Censor de Palabras.");
+string parrafo = Console.ReadLine();
+Console.WriteLine("Ingrese la palabra prohibida:");
+string palabraProhibida = Console.ReadLine();
+Console.WriteLine("Ingrese la palabra de reemplazo:");
+string palabraReemplazo = Console.ReadLine();
+string parrafoModificado = parrafo.Replace(palabraProhibida, palabraReemplazo);
+Console.WriteLine("El texto resultante es: " + parrafoModificado);
 
+//Ejercicio 5
+Console.WriteLine("");
+Console.WriteLine("Ejercicio 5");
+Console.WriteLine("");
+Console.WriteLine("ingrese su nombre y apellido para abreviarlo y poner solo las iniciales");
+string nombreCompleto = Console.ReadLine();
+string[] partes = nombreCompleto.Split(' ');
+string iniciales = "";
+for (int i = 0; i < partes.Length; i++)
+{
+    iniciales += partes[i][0] + ".";
+}
+Console.WriteLine("Las iniciales son: " + iniciales);
+
+//Ejercicio 6
+Console.WriteLine("");
+Console.WriteLine("Ejercicio 6");
+Console.WriteLine("");
+Console.WriteLine("ingrese una palabra para ver si se lee igual al derecho y al reves(palindromo)");
+string palabra = Console.ReadLine();
+string palabraInvertida2 = "";
+for (int i = 0; i < palabra.Length; i++)
+{
+    palabraInvertida2 = palabra[i] + palabraInvertida2;
+}
+if (palabra == palabraInvertida2)
+{
+    Console.WriteLine("La palabra es un palindromo");
+}
+else
+{
+    Console.WriteLine("La palabra no es un palindromo");
+}
