@@ -1,4 +1,4 @@
-﻿// Programa 3: Ahorcado
+// Programa 3: Ahorcado
 
 try
 {
@@ -6,7 +6,7 @@ try
     Console.WriteLine("");
     Console.WriteLine("Bienvenido al juego del Ahorcado.");
     Console.WriteLine("");
-    string[] palabras = { "programacion", "escritorio", "computacion"};
+    string[] palabras = { "programacion", "escritorio", "computacion" };
     Random random = new Random();
     for (int i = 0; i < palabras.Length; i++)
     {
@@ -21,8 +21,8 @@ try
         bool juegoTerminado = false;
         while (!juegoTerminado)
         {
-            Console.WriteLine($"Palabra: {new string(palabraAdivinada)}");
-            Console.WriteLine($"Intentos restantes: {intentosRestantes}");
+            Console.WriteLine("Palabra: "+ new string(palabraAdivinada));
+            Console.WriteLine("Intentos restantes: " + intentosRestantes);
             Console.Write("Ingresa una letra: ");
             char letra = Console.ReadLine()[0];
             if (palabraSecreta.Contains(letra))
