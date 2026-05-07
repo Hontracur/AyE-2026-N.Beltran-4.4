@@ -47,7 +47,7 @@ try
             }
             else if (intentosRestantes == 0)
             {
-                Console.WriteLine("Has perdido, La palabra era:" + palabraSecreta);
+                Console.WriteLine("Has perdido, La palabra era: " + palabraSecreta);
                 juegoTerminado = true;
                 break;
             }
@@ -56,5 +56,5 @@ try
 }
 catch (System.IndexOutOfRangeException)
 {
-    Console.WriteLine("Acabas de ingresar una letra que no existe en el juego.");
+    Console.WriteLine("ERROR: Acabas de ingresar una valor no existente.");
 }
