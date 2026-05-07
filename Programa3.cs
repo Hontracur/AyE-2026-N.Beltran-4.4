@@ -1,30 +1,37 @@
 // Programa 3: Ahorcado
+
 try
 {
+    Console.WriteLine("");
     Console.WriteLine("Programa 3: Ahorcado");
     Console.WriteLine("");
-    Console.WriteLine("Bienvenido al juego del Ahorcado.");
-    Console.WriteLine("");
-    string[] palabras = { "programacion", "escritorio", "computacion" };
-    Random aleatorio = new Random();
+    Console.WriteLine("Ingrese una letra");
+    
+    string[] palabras = { "programacion", "balatro", "computacion"};
+    Random random = new Random();
+    
     for (int i = 0; i < palabras.Length; i++)
     {
-        int indice = aleatorio.Next(palabras.Length);
+        int indice = random.Next(palabras.Length);
         string palabraSecreta = palabras[indice];
         char[] palabraAdivinada = new char[palabraSecreta.Length];
+        
         for (int j = 0; j < palabraAdivinada.Length; j++)
         {
             palabraAdivinada[j] = '_';
         }
+        
         int intentosRestantes = 7;
         bool juegoTerminado = false;
-        while (!juegoTerminado)
+        
+        while (juegoTerminado == false)
         {
             Console.WriteLine("Palabra: " + new string(palabraAdivinada));
-            Console.WriteLine("Intentos restantes: " + intentosRestantes);
+            Console.WriteLine("Intentos restantes:" + intentosRestantes);
             Console.Write("Ingresa una letra: ");
             char letra = Console.ReadLine()[0];
-            if (palabraSecreta.Contains(letra))
+            
+            if (palabraSecreta.Contains(letra) && juegoTerminado == false)
             {
                 for (int k = 0; k < palabraSecreta.Length; k++)
                 {
@@ -42,18 +49,16 @@ try
             {
                 Console.WriteLine("¡Felicidades! Has adivinado la palabra: " + palabraSecreta);
                 juegoTerminado = true;
-                break;
             }
             else if (intentosRestantes == 0)
             {
-                Console.WriteLine("Has perdido, La palabra era: " + palabraSecreta);
+                Console.WriteLine("Perdiste, La palabra era: " + palabraSecreta);
                 juegoTerminado = true;
             }
-                juegoTerminado = true;
         }
     }
 }
 catch (System.IndexOutOfRangeException)
 {
-    Console.WriteLine("ERROR: Acabas de ingresar una valor no existente.");
+    Console.WriteLine("Error: Se ha ingresado un valor no válido");
 }
