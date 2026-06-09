@@ -42,7 +42,7 @@ for (int i = 0; i < 10; i++)
 while (intentos > 0 && tesorosEncontrados < 3)
 {
     Console.WriteLine("");
-    Console.WriteLine("Ingresa las coordenadas para buscar un tesoro (por ej: 1 2... sin comas, solo deja un espacio): ");
+    Console.WriteLine("Ingresa las coordenadas para buscar un tesoro (por ej: 1 2 sin coma, solo deja un espacio): ");
     string[] input = Console.ReadLine().Split(' ');
     int x = int.Parse(input[0]);
     int y = int.Parse(input[1]);
