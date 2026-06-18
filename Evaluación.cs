@@ -22,7 +22,7 @@ void CrearEquipo(string[,] equipo)
         int index = random.Next(nombrePokemon.Length);
         equipo[i, 0] = nombrePokemon[index];
         equipo[i, 1] = Tipos[index];
-        equipo[i, 2] = random.Next(50, 81).ToString();
+        equipo[i, 2] = random.Next(50, 100).ToString();
     }
 }
 
