@@ -49,9 +49,9 @@
         {
             Jugador[] jugadores = new Jugador[3];
 
-            jugadores[0] = new Jugador("Cristiano", "Ronaldo", 2, 5, 7, "Delantero", "Portugal");
-            jugadores[1] = new Jugador("Lionel", "Messi", 8, 9, 10, "Delantero", "Argentina");
-            jugadores[2] = new Jugador("Julian", "Alvarez", 2, 7, 9, "Delantero", "Argentina");
+            jugadores[0] = new Jugador("Cristiano", "Ronaldo", 3, 21, 7, "Delantero", "Portugal");
+            jugadores[1] = new Jugador("Lionel", "Messi", 8, 34, 10, "Delantero", "Argentina");
+            jugadores[2] = new Jugador("Julian", "Alvarez", 1, 5, 9, "Delantero", "Argentina");
 
             Jugador mejor = jugadores[0];
 
