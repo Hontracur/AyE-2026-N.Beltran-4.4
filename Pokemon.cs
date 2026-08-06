@@ -129,28 +129,10 @@
             };
 
             string[] medallas1 =
-            {
-                "Roca",
-                "Cascada",
-                "Trueno",
-                "Arcoiris",
-                "Alma",
-                "Pantano",
-                "Volcan",
-                "Tierra"
-            };
+            { "Roca", "Cascada", "Trueno", "Arcoiris", "Alma", "Pantano", "Volcan", "Tierra"};
 
             string[] medallas2 =
-            {
-                "Roca",
-                "Cascada",
-                "Trueno",
-                "Arcoiris",
-                "",
-                "",
-                "",
-                ""
-            };
+            { "Roca", "Cascada", "Trueno", "Arcoiris", "", "", "", ""};
 
             Entrenador entrenador1 = new Entrenador("Ash", 500, medallas1, equipo1);
             Entrenador entrenador2 = new Entrenador("Pepe", 100, medallas2, equipo2);
