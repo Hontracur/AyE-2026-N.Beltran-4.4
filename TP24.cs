@@ -7,7 +7,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            string rutaSalida = "Texto.txt";
+            string rutaSalida = "TP10.txt";
 
             using (StreamWriter writer = new StreamWriter(rutaSalida, append: false))
             {
@@ -179,7 +179,7 @@ namespace ConsoleApp1
                 }
             }
 
-            string rutaEntrada = "Texto.txt";
+            string rutaEntrada = "TP10.txt";
 
             using (StreamReader reader = new StreamReader(rutaEntrada))
             {
