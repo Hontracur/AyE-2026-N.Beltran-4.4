@@ -15,7 +15,7 @@ namespace ConsoleApp3
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Server=localhost;Port:3307;Database=deadlock_db;Uid=root;Pwd=;";
+            string connectionString = "Server=localhost;Port=3307;Database=deadlock_db;Uid=root;Pwd=;";
             var serverVersion = ServerVersion.AutoDetect(connectionString);
             optionsBuilder.UseMySql(connectionString, serverVersion);
         }
