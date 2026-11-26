@@ -8,23 +8,23 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            int opcion = 0;
+            int elejir = 0;
 
-            while (opcion != 8)
+            while (elejir != 8)
             {
-                Console.WriteLine("1. Consultar // Base de datos");
-                Console.WriteLine("2. Agregar // Base de datos");
-                Console.WriteLine("3. Actualizar // Base de datos");
-                Console.WriteLine("4. Eliminar // Base de datos");
-                Console.WriteLine("5. Buscar en el arbol // Arbol binario");
-                Console.WriteLine("6. Mostrar arbol // Arbol binario");
-                Console.WriteLine("7. Ordenar alfabeticamente // Orden alfabetico");
+                Console.WriteLine("1. Consultar en Base de datos");
+                Console.WriteLine("2. Agregar en Base de datos");
+                Console.WriteLine("3. Actualizar en Base de datos");
+                Console.WriteLine("4. Eliminar en Base de datos");
+                Console.WriteLine("5. Buscar en el arbol");
+                Console.WriteLine("6. Mostrar arbol");
+                Console.WriteLine("7. Ordenar");
                 Console.WriteLine("8. Salir");
-                Console.Write("Elije: ");
+                Console.Write("Elije que es lo que quieres hacer: ");
 
-                opcion = Convert.ToInt32(Console.ReadLine());
+                elejir = Convert.ToInt32(Console.ReadLine());
 
-                switch (opcion)
+                switch (elejir)
                 {
                     case 1:
                         Mostrar(CargarLista());
